@@ -75,10 +75,10 @@ def word_generator(index, file_input):
             index += 1
             curr = file_input[index]
             while curr != "\"" and curr != "\n" and index < len(file_input):
-                word += curr
                 curr = file_input[index]
+                word += curr
                 index += 1
-            if curr == "\"": return index + 1, word + curr
+            if curr == "\"": return index, word + curr
             if curr == "\n": return index, word
 
         all_digits = all_digits and curr.isdigit()
